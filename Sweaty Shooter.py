@@ -2,6 +2,7 @@
 #game art by kenney.nl
 import pygame
 import random
+import sys
 from os import path
 
 WIDTH = 480
@@ -17,7 +18,12 @@ YELLOW = (255, 255, 0)
 ORANGE = (255, 100, 10)
 PURPLE = (102, 0, 102)
 
-game_folder = path.dirname(__file__)
+if getattr(sys, 'frozen', False):
+    game_folder = sys._MEIPASS
+else:
+    game_folder = path.dirname(__file__)
+
+#game_folder = path.dirname(__file__)
 imgs_folder = path.join(game_folder, "img")
 snds_folder = path.join(game_folder, "snd")
 
